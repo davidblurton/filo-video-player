@@ -12,7 +12,9 @@
   m.parentNode.insertBefore(video, m);
 
   loader.onload = function () {
-    var hls = new Hls();
+    var hls = new Hls({
+      liveDurationInfinity: true,
+    });
 
     // bind them together
     hls.attachMedia(video);
