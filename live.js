@@ -11,6 +11,13 @@
 
   m.parentNode.insertBefore(video, m);
 
+  document.head.insertAdjacentHTML(
+    "beforeend",
+    `<style>video::-webkit-media-controls-timeline {
+    display: none;
+}</style>`
+  );
+
   loader.onload = function () {
     var hls = new Hls({
       liveDurationInfinity: true,
